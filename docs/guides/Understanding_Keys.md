@@ -93,8 +93,8 @@ way of helping Elementary see that `f = e` but for a small property change (in t
 from 440 to 441). So, if instead of the above, we write:
 
 ```js
-let x = el.cycle({key: 'test', value: 440});
-let y = el.cycle({key: 'test', value: 441});
+let x = el.cycle(el.const({key: 'test', value: 440}));
+let y = el.cycle(el.const({key: 'test', value: 441}));
 
 core.render(x);
 core.render(y);
