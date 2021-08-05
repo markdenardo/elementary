@@ -1,5 +1,32 @@
 # Changes
 
+## v0.9.4
+
+Aug 5, 2021
+
+* Internal bugfix for midi event handling
+
+## v0.9.1
+
+Aug 3, 2021
+
+* Bugfix passing an array of children during Node construction
+
+## v0.9.0
+
+Aug 3, 2021
+
+* Windows support
+* Replaced `require('elementary-core')` with a global `elementary.core` reference
+* Internal refactoring
+
+## v0.2.2
+
+Jul 12, 2021
+
+* Fix exit on error
+* Fix propagating node cli args
+
 ## v0.2.1
 
 Jun 18, 2021
