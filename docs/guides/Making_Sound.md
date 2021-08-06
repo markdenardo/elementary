@@ -152,7 +152,6 @@ let tone = sineTone(el.phasor(el.add(200, el.mul(440, el.phasor(1)))));
 
 // Or maybe quickly ramping between 200Hz up to 640Hz?
 let tone = sineTone(el.phasor(el.add(200, el.mul(440, el.phasor(20)))));
-});
 ```
 
 You'll notice as you go that the opportunities for experimentation here are already boundless, and if you want to
