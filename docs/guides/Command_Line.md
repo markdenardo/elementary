@@ -31,7 +31,7 @@ Options:
     * Sets the number of input channels with which to open the driver. For example, if you want to process your microphone
       signal as a stereo input, you would set this to 2.
 * *Outputs*
-    * `-i, --inputs`
+    * `-o, --outputs`
     * Sets the number of output channels with which to open the driver. For example, if you want to procedurally generate a
       drum pattern and output your kick on one channel, your snare on another, and your hats on a third, you can set this to 3.
     * Generally this corresponds with how many arguments you pass to `core.render`: e.g. `core.render(kick, snare, hat)`, as the arguments

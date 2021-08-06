@@ -11,18 +11,23 @@ Watch the [intro video](https://www.youtube.com/watch?v=AvCdrflFHu8) for the ful
 
 ## Installation
 
+#### MacOS and Linux
+
 ```bash
-$ npm install @nick-thompson/elementary
+$ curl -fsSL https://www.elementary.audio/install.sh | sh
 ```
+
+#### Windows and Manual Installation
+
+You can also install the appropriate binaries for your platform manually, downloading
+from [the releases page](https://github.com/nick-thompson/elementary/releases) on this repository,
+and unpacking the zip file to a directory of your choosing.
 
 Elementary has essentially two components: the *runtime*, and the *library*.
 
-The *runtime* is a native binary application much like Node.js itself, and is available inside the `npm`
-package. To install `elementary` globally at your command line, you can always `npm install -g @nick-thompson/elementary`, however,
-the preferred method is to install as a local dependency and invoke the local binary at `./node_modules/.bin/elementary` or with
-`npx elementary` ([more about npx here](https://www.npmjs.com/package/npx)). This way, the library component and the runtime component are always of matching versions.
+The *runtime* is a native binary application much like Node.js itself, which is installed via the above `curl` command.
 
-The *library* component is basically the rest of the `npm` package, and is what you get when you write `require('@nick-thompson/elementary')`.
+The *library* component is what you'll find in this `npm` package, and is what you get when you write `require('@nick-thompson/elementary')`.
 The library, explained in detail in the reference section of the documentation, offers a set of convenience APIs and a growing set of library functions
 to help you construct your audio signal chain.
 
@@ -32,9 +37,9 @@ Here in the `examples/` directory you'll find a small set of example projects ai
 example can be invoked on its own:
 
 ```bash
-$ cd examples/00_HelloSine
+$ cd examples/
 $ npm install
-$ npm start
+$ elementary 00_HelloSine/
 ```
 
 And of course you can open these example files, poke around, and edit as you like!

@@ -1,11 +1,8 @@
 # Core
 
-```js
-require('elementary-core');
-```
-
-The `elementary-core` native module is primarily responsible for interfacing with the underlying
-native audio runtime.
+The Elementary runtime installs a reference `elementary` into the global scope of the JavaScript
+environment on boot. Through that reference, you can reach `elementary.core`, which is the natiive
+module primarily responsible for interfacing with the underlying native audio runtime.
 
 * [Events](#events)
     * ['load'](#load)
@@ -21,7 +18,7 @@ native audio runtime.
 
 ## Events
 
-The `elementary-core` module exports an object which is an instance of Node.js' `events.EventEmitter`. The events
+The `elementary.core` object is an instance of Node.js' `events.EventEmitter`. The events
 below will be dispatched from the native module and can be subscribed to following the `EventEmitter` API.
 
 #### 'load'
