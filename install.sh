@@ -70,7 +70,7 @@ else
     esac
 
     echo "Manually add the directory to your \$HOME/$SHELL_PROFILE (or similar)"
-    echo "  export ELEM_INSTALL=\"$ELEM_INSTALL\""
-    echo "  export PATH=\"\$ELEM_INSTALL/bin:\$PATH\""
+    echo "  export ELEM_INSTALL_DIR=\"$ELEM_INSTALL_DIR\""
+    echo "  export PATH=\"\$ELEM_INSTALL_DIR/bin:\$PATH\""
     echo "Then Run 'elementary --help' to get started (you may need to restart your shell session to reload your profile configuration"
 fi
