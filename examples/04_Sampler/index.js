@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -57,8 +56,8 @@ function samplerVoice(voice) {
 // Finally, much like the previous example, we install a "midi" event handler
 // in which we update the voice state, recompute the output signal, and render
 // it.
-core.on('load', function() {
-  core.on('midi', function(e) {
+elementary.core.on('load', function() {
+  elementary.core.on('midi', function(e) {
     updateVoiceState(e);
 
     let out = el.add(Object.keys(voices).map(function(n) {
@@ -67,6 +66,6 @@ core.on('load', function() {
 
     let filtered = el.lowpass(1800, 1.414, out);
 
-    core.render(filtered, filtered);
+    elementary.core.render(filtered, filtered);
   });
 });

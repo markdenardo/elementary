@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -41,7 +40,7 @@ function pattern() {
 }
 
 // Await the "load" event, and render!
-core.on('load', function() {
+elementary.core.on('load', function() {
   let pat = pattern();
-  core.render(pat, pat);
+  elementary.core.render(pat, pat);
 });

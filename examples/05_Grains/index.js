@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -46,7 +45,7 @@ function grainTrain() {
 }
 
 // Await the "load" event and render!
-core.on('load', function() {
+elementary.core.on('load', function() {
   let train = grainTrain();
-  core.render(train, train);
+  elementary.core.render(train, train);
 });

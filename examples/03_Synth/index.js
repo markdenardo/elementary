@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 const path = require('path');
 
@@ -73,8 +72,8 @@ function modulate(x, rate, amount) {
 // Here we await the "load" event as usual, but this time when the event fires we
 // don't render yet– we install another event handler for "midi" events. When a new
 // MIDI event comes in, we update the voice state, rebuild our signal, and render again.
-core.on('load', function() {
-  core.on('midi', function(e) {
+elementary.core.on('load', function() {
+  elementary.core.on('midi', function(e) {
     updateVoiceState(e);
 
     // Start with just a dry sum of all of our 4 sawtooth voices.
@@ -100,6 +99,6 @@ core.on('load', function() {
     // Then we render the same `wetdry2` signal into both the left and the right channel,
     // though of course you can deviate from the above flow at any point to create interesting
     // stereo behavior by differentiating the left and the right channel signals.
-    core.render(wetdry2, wetdry2);
+    elementary.core.render(wetdry2, wetdry2);
   });
 });

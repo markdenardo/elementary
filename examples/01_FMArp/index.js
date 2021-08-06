@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -34,7 +33,7 @@ function voice(fq) {
   );
 }
 
-core.on('load', function() {
+elementary.core.on('load', function() {
   // Here we'll construct our arp pattern and apply an ADSR envelope to the synth voice.
   // To start, we have a pulse train (gate signal) running at 5Hz.
   let gate = el.train(5);
@@ -49,7 +48,7 @@ core.on('load', function() {
   let right = el.mul(env, voice(el.seq({seq: s2, hold: true}, gate)));
 
   // And then render it!
-  core.render(
+  elementary.core.render(
     el.mul(0.3, left),
     el.mul(0.3, right),
   );

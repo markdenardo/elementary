@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -17,7 +16,7 @@ function modulate(x, rate, amount) {
 // Here we have a very basic flanger, which just modulates a delay tap within
 // 0.1ms to 7.9ms at a feedback of 0.9.
 function flanger(x) {
-  const sr = core.getSampleRate();
+  const sr = elementary.core.getSampleRate();
   const lfo = modulate(4, 0.1, 3.9);
 
   return el.delay({size: sr}, el.ms2samps(lfo), 0.9, x);
@@ -26,14 +25,14 @@ function flanger(x) {
 // And finally a simple wrapper around `el.delay` just to make the render
 // step below a little easier to read.
 function fbdelay(delayTime, x) {
-  const sr = core.getSampleRate();
+  const sr = elementary.core.getSampleRate();
 
   return el.delay({size: sr}, el.ms2samps(delayTime), 0.6, x);
 }
 
-core.on('load', function() {
+elementary.core.on('load', function() {
   console.log('Be careful. If your mic can hear your speakers, this will cause a feedback loop.');
-  const sr = core.getSampleRate();
+  const sr = elementary.core.getSampleRate();
 
   // Our render step is a simple chain of the above fbdelay and flanger functions
   // with a little bit of stereo differentiation via the slightly offset delay times
@@ -42,7 +41,7 @@ core.on('load', function() {
   // The choices here are of course arbitrary and lean on your own creative direction,
   // but this example aims to simply demonstrate some of what you can do with input
   // processing.
-  core.render(
+  elementary.core.render(
     flanger(el.lowpass(800, 1.414, fbdelay(500, el.in({channel: 0})))),
     flanger(el.highpass(800, 1.414, fbdelay(600, el.in({channel: 1})))),
   );

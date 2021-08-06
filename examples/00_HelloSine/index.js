@@ -1,4 +1,3 @@
-const core = require('elementary-core');
 const el = require('@nick-thompson/elementary');
 
 
@@ -13,8 +12,8 @@ const el = require('@nick-thompson/elementary');
 // The signal we're generating here is a simple sine tone via `el.cycle` at 440Hz in the left
 // channel and 441Hz in the right, creating some interesting binaural beating. Each sine tone is
 // then multiplied by 0.3 to apply some simple gain before going to the output. That's it!
-core.on('load', function() {
-  core.render(
+elementary.core.on('load', function() {
+  elementary.core.render(
     el.mul(0.3, el.cycle(440)),
     el.mul(0.3, el.cycle(441)),
   );
