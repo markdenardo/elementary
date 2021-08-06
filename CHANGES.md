@@ -1,5 +1,11 @@
 # Changes
 
+## v0.9.5
+
+Aug 6, 2021
+
+* Fix runtime path lookup for linux executable
+
 ## v0.9.4
 
 Aug 5, 2021
