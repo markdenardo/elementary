@@ -20,15 +20,19 @@ el.sample({path: '/path/to/kick.wav', channel: 1}, el.train(1));
 
 #### Props
 
-| Name     | Default  | Type   | Description                                   |
-| -------- | -------- | ------------------------------------------------------ |
-| path     | ''       | String | The location of the sample file on disk       |
-| channel  | 0        | Number | The channel to read from the sample           |
+| Name        | Default   | Type   | Description                                                          |
+| ----------- | --------- | ------ | -------------------------------------------------------------------- |
+| path        | ''        | String | The location of the sample file on disk                              |
+| channel     | 0         | Number | The channel to read from the sample                                  |
+| mode        | 'trigger' | String | One of "trigger", "gate", "loop"                                     |
+| startOffset | 0         | Number | Offset in samples from the start of the sample where playback starts |
+| stopOffset  | 0         | Number | Offset in samples from the end of the sample where playback ends     |
+
 
 ### el.table(props, t)
 
-Loads a sample from disk into a lookup table, which is then read from with
-a position determined by the incoming signal phase.
+Loads a lookup table which is then read from with a position determined by the
+incoming signal phase. The table can either be loaded directly or from a file on disk.
 
 The lookup position is given as a normalized phase value, so for example, driving
 a lookup table with a simple phasor will sweep through the entire lookup table at
@@ -52,8 +56,9 @@ el.table({path: '/path/to/padSound.wav'}, el.add(0.1, el.mul(0.1, el.phasor(1)))
 
 #### Props
 
-| Name     | Default  | Type   | Description                                   |
-| -------- | -------- | ------------------------------------------------------ |
-| path     | ''       | String | The location of the sample file on disk       |
-| channel  | 0        | Number | The channel to read from the sample           |
+| Name     | Default  | Type          | Description                                   |
+| -------- | -------- | ------------------------------------------------------------- |
+| path     | ''       | String        | The location of the sample file on disk       |
+| data     | null     | Float32Array  | Manually constructed lookup table data        |
+| channel  | 0        | Number        | The channel to read from the sample           |
 

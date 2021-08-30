@@ -108,6 +108,61 @@ Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.
 
 None
 
+### el.allpass(fc, q, x)
+
+An allpass biquad filter with a cutoff frequency at `fc`, a Q of `q`, and which
+filters the input signal `x`.
+
+Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
+
+#### Props
+
+None
+
+### el.notch(fc, q, x)
+
+A notch biquad filter with a cutoff frequency at `fc`, a Q of `q`, and which
+filters the input signal `x`.
+
+Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
+
+#### Props
+
+None
+
+### el.peak(fc, q, gainDecibels, x)
+
+A peaking (bell) biquad filter with a cutoff frequency at `fc`, a Q of `q`, gain in decibels as `gainDecibels`, and which
+filters the input signal `x`.
+
+Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
+
+#### Props
+
+None
+
+### el.lowshelf(fc, q, gainDecibels, x)
+
+A lowshelf biquad filter with a cutoff frequency at `fc`, a Q of `q`, gain in decibels as `gainDecibels`, and which
+filters the input signal `x`.
+
+Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
+
+#### Props
+
+None
+
+### el.highshelf(fc, q, gainDecibels, x)
+
+A lowshelf biquad filter with a cutoff frequency at `fc`, a Q of `q`, gain in decibels as `gainDecibels`, and which
+filters the input signal `x`.
+
+Reference: https://www.musicdsp.org/en/latest/Filters/197-rbj-audio-eq-cookbook.html
+
+#### Props
+
+None
+
 ### el.convolve([props], x)
 
 A convolution node which reads an impulse response from disk and convolves it with

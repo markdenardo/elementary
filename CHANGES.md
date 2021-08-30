@@ -1,5 +1,20 @@
 # Changes
 
+## v0.9.6
+
+Aug 30, 2021
+
+* Bugfix in event quantizing
+* Bugfix in el.rand() seeds
+* Bugfix in el.bleptriangle()
+* Improved collection algorithm when toggling between different topologies
+* el.table() node can now take a Float32Array `data` property for manual table construction
+* Sample and hold node with el.latch()
+* Trigger, gate, loop playback modes in el.sample() with proper voice allocation
+* Start and stop offset properties in el.sample()
+* Reset signal and loop property in el.seq()
+* New filters: el.allpass, el.notch, el.peak, el.lowshelf, el.highshelf
+
 ## v0.9.5
 
 Aug 6, 2021
