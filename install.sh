@@ -40,7 +40,10 @@ fi
 
 if [ ! -d "$ELEM_INSTALL_DIR/$ELEM_VERSION" ]; then
     mkdir -p "$ELEM_INSTALL_DIR/$ELEM_VERSION"
+else
+    rm -r "$ELEM_INSTALL_DIR/$ELEM_VERSION"/*
 fi
+
 
 echo "Downloading $ELEM_VERSION..."
 curl --fail --location --progress-bar --output "$ELEM_INSTALL_DIR/elem.zip" "$ELEM_DOWNLOAD_URI"
