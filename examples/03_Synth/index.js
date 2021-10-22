@@ -1,5 +1,6 @@
-const el = require('@nick-thompson/elementary');
-const path = require('path');
+import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 
 // In this example, we're building a simple MIDI-enabled polyphonic sawtooth
@@ -72,8 +73,8 @@ function modulate(x, rate, amount) {
 // Here we await the "load" event as usual, but this time when the event fires we
 // don't render yet– we install another event handler for "midi" events. When a new
 // MIDI event comes in, we update the voice state, rebuild our signal, and render again.
-elementary.core.on('load', function() {
-  elementary.core.on('midi', function(e) {
+core.on('load', function() {
+  core.on('midi', function(e) {
     updateVoiceState(e);
 
     // Start with just a dry sum of all of our 4 sawtooth voices.
@@ -91,7 +92,8 @@ elementary.core.on('load', function() {
     let wetdry = el.add(filtered, delayed);
 
     // Apply some convolution reverb to the prior `wetdry` signal.
-    let reverbed = el.convolve({path: path.resolve(__dirname, './KnightsHall.wav')}, wetdry);
+    let __dirname = dirname(fileURLToPath(import.meta.url));
+    let reverbed = el.convolve({path: resolve(__dirname, './KnightsHall.wav')}, wetdry);
 
     // And finally sum the wet reverb signal with the `wetdry` signal from above.
     let wetdry2 = el.add(reverbed, wetdry);
@@ -99,6 +101,8 @@ elementary.core.on('load', function() {
     // Then we render the same `wetdry2` signal into both the left and the right channel,
     // though of course you can deviate from the above flow at any point to create interesting
     // stereo behavior by differentiating the left and the right channel signals.
-    elementary.core.render(wetdry2, wetdry2);
+    core.render(wetdry2, wetdry2);
   });
 });
+
+core.initialize();

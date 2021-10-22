@@ -45,7 +45,7 @@ And of course you can open these example files, poke around, and edit as you lik
 
 ## Licensing
 
-The example code listed in this repository is available under the terms of the MIT License.
+The example code listed in this repository is available under the terms of the ISC License.
 
 The Elementary framework itself is available under one of two different licenses for either personal or
 commercial use. Please see the Elementary package on npm for details.

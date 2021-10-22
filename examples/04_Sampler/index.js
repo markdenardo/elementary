@@ -1,18 +1,20 @@
-const el = require('@nick-thompson/elementary');
+import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 
 // This example is a slight variation on the previous MIDI Synth example to
 // show a simple MIDI enabled Sampler.
 //
 // To start, I've got a couple sample files on disk that I want to trigger
-// with a MIDI keyboard. When running this example, you'll want to update
-// these file paths to some sample files on your own disk.
-const kick02 = '~/Music/Samples/Dairy Free/20191124/Toast/Kicks/Kick02.wav';
-const hh02 = '~/Music/Samples/Dairy Free/20191124/Toast/Glitch/HH02.wav';
-const clap01 = '~/Music/Samples/Dairy Free/20191124/Toast/Snares/Clap01.wav';
-const contact04 = '~/Music/Samples/Dairy Free/20201205/Contact04.wav';
-const contact05 = '~/Music/Samples/Dairy Free/20201205/Contact05.wav';
-const contact08 = '~/Music/Samples/Dairy Free/20201205/Contact08.wav';
+// with a MIDI keyboard.
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const kick02    = resolve(__dirname, './Kick02.wav');
+const hh02      = resolve(__dirname, './HH02.wav');
+const clap01    = resolve(__dirname, './Clap01.wav');
+const contact04 = resolve(__dirname, './Contact04.wav');
+const contact05 = resolve(__dirname, './Contact05.wav');
+const contact08 = resolve(__dirname, './Contact08.wav');
 
 // Next we've got our initial voice data, and here we assign the above samples
 // to the corresponding MIDI note numbers with which we want to trigger them
@@ -56,8 +58,8 @@ function samplerVoice(voice) {
 // Finally, much like the previous example, we install a "midi" event handler
 // in which we update the voice state, recompute the output signal, and render
 // it.
-elementary.core.on('load', function() {
-  elementary.core.on('midi', function(e) {
+core.on('load', function() {
+  core.on('midi', function(e) {
     updateVoiceState(e);
 
     let out = el.add(Object.keys(voices).map(function(n) {
@@ -66,6 +68,8 @@ elementary.core.on('load', function() {
 
     let filtered = el.lowpass(1800, 1.414, out);
 
-    elementary.core.render(filtered, filtered);
+    core.render(filtered, filtered);
   });
 });
+
+core.initialize();
