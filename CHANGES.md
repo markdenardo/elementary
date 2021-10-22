@@ -1,5 +1,23 @@
 # Changes
 
+## v0.10.0
+
+Oct 22, 2021
+
+* [Breaking] Updated core library exports to support es6 and new rendering targets
+* [Breaking] Updated composite node API; introducing a new RenderContext
+* [Bugfix] in property update step, ~330% render speed improvement
+* [Bugfix] with el.seq prop updates
+* [Bugfix] loading specified channels from sample node
+* [Bugfix] in variable delay builtin
+* [Bugfix] with shared references in core.resolve
+* [New] Web Audio rendering target
+* [New] Plugin DevKit rendering target
+* [New] el.env
+* [New] el.meter
+* [New] el.metro
+* [New] el.tapIn/el.tapOut
+
 ## v0.9.6
 
 Aug 30, 2021

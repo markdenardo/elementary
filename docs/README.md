@@ -1,9 +1,11 @@
-# Getting Started
+![Elementary Audio Logo](https://github.com/nick-thompson/elementary/blob/6bd2ad18946e9b784e70642ac775f4e3b5ce727c/Lockup.png)
 
-Elementary is a JavaScript runtime based on Node.js for writing native audio applications, as well as a library and
-framework for composing audio signal processes. Elementary aims to lower the barrier to entry into the
+[Website](https://www.elementary.audio/) | [Documentation](https://docs.elementary.audio/) | [Discord Chat](https://discord.gg/xSu9JjHwYc)
+
+Elementary is a JavaScript framework for writing functional, declarative audio applications with a high
+performance, native audio engine. Elementary aims to lower the barrier to entry into the
 audio application space, eliminate the gap between prototyping and production, and bring the functional reactive
-programming model to dsp.
+programming model to DSP.
 
 Watch the [intro video](https://www.youtube.com/watch?v=AvCdrflFHu8) for the full story.
 
@@ -25,9 +27,8 @@ Elementary has essentially two components: the *runtime*, and the *library*.
 
 The *runtime* is a native binary application much like Node.js itself, which is installed via the above `curl` command.
 
-The *library* component is what you'll find in this `npm` package, and is what you get when you write `require('@nick-thompson/elementary')`.
-The library, explained in detail in the reference section of the documentation, offers a set of convenience APIs and a growing set of library functions
-to help you construct your audio signal chain.
+The *library* component is what you'll find in this `npm` package. Explained in detail in the reference section of the documentation,
+the Elementary library offers a set of convenience APIs and a growing set of library functions to help you construct your audio signal chain.
 
 ## Examples
 
@@ -44,8 +45,7 @@ And of course you can open these example files, poke around, and edit as you lik
 
 ## Licensing
 
-The Elementary library available on `npm` and the command line application provided therein may be used under the terms of the AGPLv3, or a
-commercial license, at your choosing. Please refer to the [full license text](https://github.com/nick-thompson/elementary/blob/6bd2ad18946e9b784e70642ac775f4e3b5ce727c/LICENSE.md) or [contact us](https://www.elementary.audio/embed#contact-section) about a commercial license.
+The example code listed in this repository is available under the terms of the MIT License.
 
-If you're interested in embedding or extending the Elementary runtime, there is an additional Embedded Runtime SDK available under a commercial license.
-For more information, please get in contact!
+The Elementary framework itself is available under one of two different licenses for either personal or
+commercial use. Please see the Elementary package on npm for details.
