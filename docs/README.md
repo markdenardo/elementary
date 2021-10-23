@@ -1,6 +1,4 @@
-![Elementary Audio Logo](https://github.com/nick-thompson/elementary/blob/6bd2ad18946e9b784e70642ac775f4e3b5ce727c/Lockup.png)
-
-[Website](https://www.elementary.audio/) | [Documentation](https://docs.elementary.audio/) | [Discord Chat](https://discord.gg/xSu9JjHwYc)
+# Getting Started
 
 Elementary is a JavaScript framework for writing functional, declarative audio applications with a high
 performance, native audio engine. Elementary aims to lower the barrier to entry into the
@@ -9,7 +7,24 @@ programming model to DSP.
 
 Watch the [intro video](https://www.youtube.com/watch?v=AvCdrflFHu8) for the full story.
 
+Out of the box, the Elementary engine can run in the browser via the [Web Audio target](./targets/WebAudio.md), in an
+audio plugin using the [Plugin Dev Kit target](./targets/Plugin.md), or on desktop at the command line using the
+[Node.js-based command line target](./targets/Nodejs.md).
+
+For additional flexibility and extensibility, the Elementary engine is also available via the embedded SDK for
+custom native integrations. The embedded SDK is not yet publicly available, please email nick@elementary.audio
+for details.
+
 ## Installation
+
+To start, you'll first need to install the Elementary npm package:
+
+```bash
+npm install --save @nick-thompson/elementary
+```
+
+If you're building an app for the browser, that's it, you're done! If you're building
+at the command line for a desktop application, see below.
 
 #### MacOS and Linux
 
@@ -22,13 +37,6 @@ $ curl -fsSL https://www.elementary.audio/install.sh | sh
 You can also install the appropriate binaries for your platform manually, downloading
 from [the releases page](https://github.com/nick-thompson/elementary/releases) on this repository,
 and unpacking the zip file to a directory of your choosing.
-
-Elementary has essentially two components: the *runtime*, and the *library*.
-
-The *runtime* is a native binary application much like Node.js itself, which is installed via the above `curl` command.
-
-The *library* component is what you'll find in this `npm` package. Explained in detail in the reference section of the documentation,
-the Elementary library offers a set of convenience APIs and a growing set of library functions to help you construct your audio signal chain.
 
 ## Examples
 
@@ -45,7 +53,9 @@ And of course you can open these example files, poke around, and edit as you lik
 
 ## Licensing
 
-The example code listed in this repository is available under the terms of the ISC License.
+Elementary is available for use under either the PolyForm Strict 1.0.0 license, or under
+the terms of a commercial license, at your choosing. Please see LICENSE.md in the npm package
+for the full text of the PolyForm Strict 1.0.0 license, and please contact nick@elementary.audio to inquire for a commercial license.
 
-The Elementary framework itself is available under one of two different licenses for either personal or
-commercial use. Please see the Elementary package on npm for details.
+For use under the PolyForm Strict 1.0.0 license you must also include a note, "Made with Elementary Audio" either
+somewhere on the visible part of your application or webpage, or within the documentation.
