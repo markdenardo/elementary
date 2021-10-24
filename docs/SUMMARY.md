@@ -15,7 +15,8 @@
 
 ## Reference
 
-- [Core](reference/Core.md)
+- [Top Level](reference/TopLevel.md)
+- [MIDI](reference/Midi.md)
 - [Library](reference/Library.md)
     - [Native](reference/library/Native.md)
     - [Basics](reference/library/Basics.md)
