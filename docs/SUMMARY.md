@@ -3,7 +3,7 @@
 ## Targets
 
 - [Audio Plugins](targets/Plugin.md)
-- [Command line](targets/Noise.md)
+- [Command line](targets/Nodejs.md)
 - [WebAudio](targets/WebAudio.md)
 
 ## Guides
