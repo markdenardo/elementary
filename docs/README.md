@@ -7,9 +7,9 @@ programming model to DSP.
 
 Watch the [intro video](https://www.youtube.com/watch?v=AvCdrflFHu8) for the full story.
 
-Out of the box, the Elementary engine can run in the browser via the [Web Audio target](./targets/WebAudio.md), in an
-audio plugin using the [Plugin Dev Kit target](./targets/Plugin.md), or on desktop at the command line using the
-[Node.js-based command line target](./targets/Nodejs.md).
+Out of the box, the Elementary engine can run in the browser via the [Web Audio target](targets/WebAudio.md), in an
+audio plugin using the [Plugin Dev Kit target](targets/Plugin.md), or on desktop at the command line using the
+[Node.js-based command line target](targets/Nodejs.md).
 
 For additional flexibility and extensibility, the Elementary engine is also available via the embedded SDK for
 custom native integrations. The embedded SDK is not yet publicly available, please email nick@elementary.audio
