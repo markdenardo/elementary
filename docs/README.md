@@ -23,7 +23,7 @@ To start, you'll first need to install the Elementary npm package:
 npm install --save @nick-thompson/elementary
 ```
 
-If you're building an app for the browser, that's it, you're done! If you're building
+If you're building an app for the browser, then that's it, you're done! If you're building
 at the command line for a desktop application, see below.
 
 #### MacOS and Linux
