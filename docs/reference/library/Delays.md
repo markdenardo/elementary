@@ -76,7 +76,7 @@ use care when implementing feedback to insert appropriate gains.
 #### Props
 
 | Name     | Default  | Type   | Description                                   |
-| -------- | -------- | ------------------------------------------------------ |
+| -------- | -------- | ------ | --------------------------------------------- |
 | name     | ''       | String | Names the output tap from which we wire in    |
 
 
@@ -106,6 +106,6 @@ Reference: https://ccrma.stanford.edu/~jos/pasp/Allpass_Two_Combs.html
 #### Props
 
 | Name     | Default  | Type   | Description                                   |
-| -------- | -------- | ------------------------------------------------------ |
+| -------- | -------- | ------ | --------------------------------------------- |
 | size     | 0        | Number | Sets the maximum delay line length in samples |
 
