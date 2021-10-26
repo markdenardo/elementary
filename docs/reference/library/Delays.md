@@ -41,6 +41,7 @@ core.render(el.delay(512, 0, el.in({channel: 0})));
 | name     | ''       | String | Names the output tap                          |
 | size     | 512\*    | Number | Sets the delay length in samples              |
 
+
 * Note: the default size is set to the length of the block provided by the audio driver.
   This may vary platform to platform, it is recommended that you explicitly provide a size.
 * Also note: for efficiency, the minimum size allowed is also the block length provided by
@@ -77,6 +78,7 @@ use care when implementing feedback to insert appropriate gains.
 | Name     | Default  | Type   | Description                                   |
 | -------- | -------- | ------------------------------------------------------ |
 | name     | ''       | String | Names the output tap from which we wire in    |
+
 
 ### el.delay([props], len, fb, x)
 
