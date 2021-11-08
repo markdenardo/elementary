@@ -1,5 +1,14 @@
 # Changes
 
+## v0.10.4
+
+Nov 8, 2021
+
+* [Bugfix] in hot reloading within the Plugin Dev Kit
+* [New] el.scope for reporting signal buffers and drawing oscilloscopes
+* [New] el.time reporting the current sample time
+* [New] PluginDevKit configuring its window from elementary.config.json
+
 ## v0.10.0
 
 Oct 22, 2021
