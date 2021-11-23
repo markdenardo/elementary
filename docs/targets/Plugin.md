@@ -6,7 +6,7 @@ will be following shortly. MacOS users may download the plugin binaries [here](h
 ## Getting Started
 
 1. Open up the DMG file and drag the appropriate plugin format to your install directory.
-   Typically the VST3 will go in ~/Library/Audio/Plug-Ins/VST3, and the AU in ~/Library/Audio/Plug-Ins/Components.
+   Typically the VST3 will go in `~/Library/Audio/Plug-Ins/VST3`, and the AU in `~/Library/Audio/Plug-Ins/Components`.
 2. Spin up a new web application dev server on 127.0.0.1:3000. For a quick example, try create-react-app
    out of the box. See the note below on provisioning a dev certificate for serving your app over https.
 
@@ -71,6 +71,27 @@ against a local certificate authority.
 
 There are a few features of the `ElementaryPluginRenderer` that are unique to the audio
 plugin context.
+
+#### Event: '/macro/\*'
+
+The `/macro/\*` event fires any time one of the eight macro parameter values changes
+inside the DAW itself. These events will be enumerated by the index of the parameter changed. That is,
+when the first parameter is changed the event name will be `'/macro/0'`, when the second parameter is
+changed, the event name will be `'/macro/1'`, etc.
+
+The argument given to any subscribed callbacks will simply be the new parameter value
+as a number on the range [0, 1].
+
+Example:
+
+```js
+core.on('/macro/5', function(v) {
+  setCutoffFrequency(20 + v * 18000);
+});
+```
+
+*Note: currently these 8 parameter values cannot be written from JavaScript. This will
+be addressed in a forthcoming update.*
 
 #### Event: 'playhead'
 
