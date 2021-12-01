@@ -37,7 +37,7 @@ core.render(el.delay(512, 0, el.in({channel: 0})));
 #### Props
 
 | Name     | Default  | Type   | Description                                   |
-| -------- | -------- | ------------------------------------------------------ |
+| -------- | -------- | ------ | --------------------------------------------- |
 | name     | ''       | String | Names the output tap                          |
 | size     | 512\*    | Number | Sets the delay length in samples              |
 
