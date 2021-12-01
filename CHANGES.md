@@ -1,5 +1,24 @@
 # Changes
 
+## v0.10.5
+
+Dec 1, 2021
+
+* [Breaking] Removed el.inputs(). See below for further detail
+* [Bugfix] Fix bundling of the events package
+* [Bugfix] For minimum el.metro interval
+* [Perf] Core render algorithm sped up nearly 200%
+* [New] el.db2gain
+* [New] el.phasor now takes an optional reset signal
+* [New] el.freeverb, a simple Freeverb implementation
+* [New] el.compress, a standard hard-knee compressor
+* Minor bugfixes
+
+Notes:
+* el.inputs has been removed due to its inconsistent API with the remaining stdlib
+  functions. Users may access the number of input channels using the RenderContext provided
+  to composite node types to build a list of `el.in()` nodes as necessary
+
 ## v0.10.4
 
 Nov 8, 2021
