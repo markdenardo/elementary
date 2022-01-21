@@ -1,22 +1,29 @@
 # Summary
 
+## Targets
+
+- [Audio Plugins](targets/Plugin.md)
+- [Command line](targets/Nodejs.md)
+- [WebAudio](targets/WebAudio.md)
+
 ## Guides
 
-- [Command Line Options](guides/Command_Line.md)
 - [Making Sound 101](guides/Making_Sound.md)
 - [Native Rendering](guides/Native_Rendering.md)
 - [Understanding Keys](guides/Understanding_Keys.md)
 - [Writing Reusable Components](guides/Writing_Reusable_Components.md)
-- [Node/NPM Compatibility](guides/Nodejs_Compatibility.md)
 
 ## Reference
 
-- [Core](reference/Core.md)
+- [Top Level](reference/TopLevel.md)
+- [MIDI](reference/Midi.md)
 - [Library](reference/Library.md)
     - [Native](reference/library/Native.md)
     - [Basics](reference/library/Basics.md)
     - [Delays](reference/library/Delays.md)
+    - [Dynamics](reference/library/Dynamics.md)
     - [Filters](reference/library/Filters.md)
+    - [Freeverb](reference/library/Freeverb.md)
     - [Math](reference/library/Math.md)
     - [Noise](reference/library/Noise.md)
     - [Oscillators](reference/library/Oscillators.md)

@@ -1,12 +1,12 @@
-const el = require('@nick-thompson/elementary');
+import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 
 // This example shows a neat trick for adding occasional ratchet steps into an
 // otherwise static sample playback pattern.
-//
-// Here I've got a sample file location on my disk, you'll want to update this
-// to an appropriate path on your disk before running the example!
-const SAMPLE_PATH = '~/Music/Samples/Dairy Free/20201205/Contact01.wav';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const SAMPLE_PATH = resolve(__dirname, './Contact04.wav');
 
 
 function pattern() {
@@ -40,7 +40,9 @@ function pattern() {
 }
 
 // Await the "load" event, and render!
-elementary.core.on('load', function() {
+core.on('load', function() {
   let pat = pattern();
-  elementary.core.render(pat, pat);
+  core.render(pat, pat);
 });
+
+core.initialize();

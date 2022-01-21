@@ -1,5 +1,51 @@
 # Changes
 
+## v0.10.5
+
+Dec 1, 2021
+
+* [Breaking] Removed el.inputs(). See below for further detail
+* [Bugfix] Fix bundling of the events package
+* [Bugfix] For minimum el.metro interval
+* [Perf] Core render algorithm sped up nearly 200%
+* [New] el.db2gain
+* [New] el.phasor now takes an optional reset signal
+* [New] el.freeverb, a simple Freeverb implementation
+* [New] el.compress, a standard hard-knee compressor
+* Minor bugfixes
+
+Notes:
+* el.inputs has been removed due to its inconsistent API with the remaining stdlib
+  functions. Users may access the number of input channels using the RenderContext provided
+  to composite node types to build a list of `el.in()` nodes as necessary
+
+## v0.10.4
+
+Nov 8, 2021
+
+* [Bugfix] in hot reloading within the Plugin Dev Kit
+* [New] el.scope for reporting signal buffers and drawing oscilloscopes
+* [New] el.time reporting the current sample time
+* [New] PluginDevKit configuring its window from elementary.config.json
+
+## v0.10.0
+
+Oct 22, 2021
+
+* [Breaking] Updated core library exports to support es6 and new rendering targets
+* [Breaking] Updated composite node API; introducing a new RenderContext
+* [Bugfix] in property update step, ~330% render speed improvement
+* [Bugfix] with el.seq prop updates
+* [Bugfix] loading specified channels from sample node
+* [Bugfix] in variable delay builtin
+* [Bugfix] with shared references in core.resolve
+* [New] Web Audio rendering target
+* [New] Plugin DevKit rendering target
+* [New] el.env
+* [New] el.meter
+* [New] el.metro
+* [New] el.tapIn/el.tapOut
+
 ## v0.9.6
 
 Aug 30, 2021

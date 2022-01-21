@@ -1,4 +1,6 @@
-const el = require('@nick-thompson/elementary');
+import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
 
 // This example shows another approach to sample playback and manipulation.
@@ -15,7 +17,8 @@ const el = require('@nick-thompson/elementary');
 // For interesting results, try updating the SAMPLE_PATH here to a longer file,
 // maybe several seconds long or more, to hear the grain readers slowly sweeping
 // across the file.
-const SAMPLE_PATH = '~/Music/Samples/Dairy Free/20200107/JamuarySketch.wav';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
 
 
 function grainTrain() {
@@ -27,7 +30,7 @@ function grainTrain() {
   // Next we derive our "reader" signals, `r` and `r2`, by swinging a slow sine
   // shaped LFO within [0, 1] and summing our phasors into it, multiplying each
   // phasor by 0.01 to ensure that it only sweeps through a tiny portion of the buffer (a grain).
-  let o = el.mul(0.1, el.add(1, el.cycle(0.001)));
+  let o = el.mul(0.2, el.add(1, el.cycle(0.01)));
   let r = el.add(o, el.mul(0.01, t));
   let r2 = el.add(o, el.mul(0.01, t2));
 
@@ -45,7 +48,9 @@ function grainTrain() {
 }
 
 // Await the "load" event and render!
-elementary.core.on('load', function() {
+core.on('load', function() {
   let train = grainTrain();
-  elementary.core.render(train, train);
+  core.render(train, train);
 });
+
+core.initialize();

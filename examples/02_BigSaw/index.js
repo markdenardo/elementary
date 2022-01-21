@@ -1,4 +1,4 @@
-const el = require('@nick-thompson/elementary');
+import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
 
 
 // This example is a quick exercise in unison for a polyblep sawtooth synth voice.
@@ -44,11 +44,13 @@ function superVoice(freq, delta) {
 // the call to render. To render this structure we're constructing and then reconciling
 // a much larger signal graph than in either of the previous examples, so here's an interesting
 // opportunity to measure.
-elementary.core.on('load', function() {
+core.on('load', function() {
   const time = process.hrtime();
-  elementary.core.render(superVoice(110, 8.0), superVoice(110, 8.0));
+  core.render(superVoice(110, 8.0), superVoice(110, 8.0));
   const diff = process.hrtime(time);
   const nanos = diff[0] * 1e9 + diff[1];
   const ms = nanos / 1e6;
   console.log(`Initial render took ${ms}ms`);
 });
+
+core.initialize();

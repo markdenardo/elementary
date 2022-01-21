@@ -4,6 +4,7 @@
   "description": "",
   "author": "Nick Thompson",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "@nick-thompson/elementary": "0.10.5"
   }

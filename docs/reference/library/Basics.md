@@ -68,6 +68,15 @@ ahead of the realtime rendering.
 
 None
 
+### el.db2gain([props], db)
+
+Equivalent to `el.pow(10, el.mul(db, 1 / 20))`, where `db` is the input value in Decibels.
+The return value is a signal representing the equivalent linear gain (amplitude).
+
+#### Props
+
+None
+
 ### el.select
 
 A simple conditional operator. Given a gate signal, `g`, on the range [0, 1],
